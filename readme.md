@@ -1,5 +1,5 @@
 # bnote
-Used to keep a daily running log, notes are stored in `~/.bnote/YYYY_MM_DD`.
+Used to keep a daily running log using vim. Notes are stored in `~/.bnote/YYYY_MM_DD`.
 
 ## Install
 Clone this directory and run the following commands.
