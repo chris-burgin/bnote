@@ -1,5 +1,13 @@
 #! /bin/bash -
 if [ -n "$1" ]; then
+  if [[ "$1" = "--help" ]]; then
+    echo "--dir show where notes are stored"
+    echo "--yesterday shows yesterdays note"
+    echo "--ls shows all notes"
+    echo "--help shows all commands"
+    exit;
+  fi
+
   if [[ "$1" = "--dir" ]]; then
     echo "$(dirname ~/.bnote)/.bnote"
     exit
@@ -8,6 +16,11 @@ if [ -n "$1" ]; then
   if [[ "$1" = "--yesterday" ]]; then
     yesterday=$(date -r `expr \`date +%s\` - 86400` '+%Y_%m_%d')
     less ~/.bnote/$yesterday.txt
+    exit
+  fi
+
+  if [[ "$1" = "--ls" ]]; then
+    ls ~/.bnote
     exit
   fi
 
