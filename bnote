@@ -12,7 +12,8 @@ time=$(date +"%T")
 filename="$date.txt"
 
 if [[ ! -e ~/.bnote/$filename ]]; then
-  echo "--- ${date} log ---" > ~/.bnote/$filename
+  echo "----------------------" > ~/.bnote/$filename
+  echo "--- ${date} log ---" >> ~/.bnote/$filename
   echo "----------------------" >> ~/.bnote/$filename
 fi
 
