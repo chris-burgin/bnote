@@ -14,4 +14,5 @@ Simply run `bnote` to open your note, with a new timestamp, in vim.
 ### Viewing Old Notes
 Run `bnote YYYY_MM_DD` to view the notes for that day
 
+## Screenshot
 ![example](./example.png)
