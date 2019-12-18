@@ -1,7 +1,17 @@
 #! /bin/bash -
-file=$1
-if [ -n "$file" ]; then
-  less ~/.bnote/$file.txt
+if [ -n "$1" ]; then
+  if [[ "$1" = "--dir" ]]; then
+    echo "$(dirname ~/.bnote)/.bnote"
+    exit
+  fi
+
+  if [[ "$1" = "--yesterday" ]]; then
+    yesterday=$(date -r `expr \`date +%s\` - 86400` '+%Y_%m_%d')
+    less ~/.bnote/$yesterday.txt
+    exit
+  fi
+
+  less ~/.bnote/$1.txt
   exit
 fi
 
@@ -17,8 +27,8 @@ if [[ ! -e ~/.bnote/$filename ]]; then
   echo "----------------------" >> ~/.bnote/$filename
 fi
 
-echo "" >> ~/.bnote/$filename 
-echo "---" >> ~/.bnote/$filename 
-echo "$time" >> ~/.bnote/$filename 
-echo "---" >> ~/.bnote/$filename 
+echo "" >> ~/.bnote/$filename
+echo "---" >> ~/.bnote/$filename
+echo "$time" >> ~/.bnote/$filename
+echo "---" >> ~/.bnote/$filename
 vim '+normal Go' ~/.bnote/$filename
