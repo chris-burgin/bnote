@@ -1,0 +1,23 @@
+#! /bin/bash -
+file=$1
+if [ -n "$file" ]; then
+  less ~/.bnote/$file.txt
+  exit
+fi
+
+mkdir -p ~/.bnote/;
+
+date=$(date +'%Y_%m_%d')
+time=$(date +"%T")
+filename="$date.txt"
+
+if [[ ! -e ~/.bnote/$filename ]]; then
+  echo "--- ${date} log ---" > ~/.bnote/$filename
+  echo "----------------------" >> ~/.bnote/$filename
+fi
+
+echo "" >> ~/.bnote/$filename 
+echo "---" >> ~/.bnote/$filename 
+echo "$time" >> ~/.bnote/$filename 
+echo "---" >> ~/.bnote/$filename 
+vim '+normal Go' ~/.bnote/$filename
