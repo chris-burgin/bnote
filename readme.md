@@ -17,6 +17,8 @@ Run `bnote YYYY_MM_DD` to view the notes for that day
 ### Other Commands
 - `bnote --yesterday` to view yesterdays note
 - `bnote --dir` show where notes are stored
+- `bnote --ls` shows all notes
+- `bnote --help` lists all commands
 
 ## Screenshot
 ![example](./example.png)
