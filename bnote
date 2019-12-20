@@ -19,6 +19,14 @@ if [ -n "$1" ]; then
     exit
   fi
 
+  if [[ "$1" = "--daysago" ]]; then
+    let daysInMs="86400*$2"
+    ms="$b$daysInMs"
+    dte=$(date -r `expr \`date +%s\` - $ms` '+%Y_%m_%d')
+    less ~/.bnote/$dte.txt
+    exit
+  fi
+
   if [[ "$1" = "--ls" ]]; then
     ls ~/.bnote
     exit
