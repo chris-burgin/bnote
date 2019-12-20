@@ -5,6 +5,7 @@ if [ -n "$1" ]; then
     echo "--yesterday shows yesterdays note"
     echo "--ls shows all notes"
     echo "--help shows all commands"
+    echo "--daysago 2" shows notes from x days ago
     exit;
   fi
 
