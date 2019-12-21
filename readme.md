@@ -15,11 +15,11 @@ Simply run `bnote` to open your note, with a new timestamp, in vim.
 Run `bnote YYYY_MM_DD` to view the notes for that day
 
 ### Other Commands
-- `bnote --yesterday` to view yesterdays note
+- `bnote -y`    to view yesterdays note
 - `bnote --dir` show where notes are stored
-- `bnote --ls` shows all notes
-- `bnote --help` lists all commands
-- `bnote --daysago 2` shows notes from x days ago
+- `bnote --ls`  shows all notes
+- `bnote -h`    lists all commands
+- `bnote -d 2`  shows notes from x days ago
 
 ## Screenshot
 ![example](./example.png)

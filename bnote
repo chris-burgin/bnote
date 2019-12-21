@@ -1,11 +1,11 @@
 #! /bin/bash -
 if [ -n "$1" ]; then
-  if [[ "$1" = "--help" ]]; then
-    echo "--dir show where notes are stored"
-    echo "--yesterday shows yesterdays note"
-    echo "--ls shows all notes"
-    echo "--help shows all commands"
-    echo "--daysago 2" shows notes from x days ago
+  if [[ "$1" = "--help" ]] || [[ "$1" = "-h" ]]; then
+    echo "--dir              show where notes are stored"
+    echo "-y, --yesterday    shows yesterdays note"
+    echo "--ls               shows all notes"
+    echo "-h, --help         shows all commands"
+    echo "-d, --daysago      shows notes from x days ago. Example: \"--daysago 2\""
     exit;
   fi
 
@@ -14,13 +14,13 @@ if [ -n "$1" ]; then
     exit
   fi
 
-  if [[ "$1" = "--yesterday" ]]; then
+  if [[ "$1" = "--yesterday" ]] || [[ "$1" = "-y" ]]; then
     yesterday=$(date -r `expr \`date +%s\` - 86400` '+%Y_%m_%d')
     less ~/.bnote/$yesterday.txt
     exit
   fi
 
-  if [[ "$1" = "--daysago" ]]; then
+  if [[ "$1" = "--daysago" ]] || [[ "$1" = "-d" ]]; then
     let daysInMs="86400*$2"
     ms="$b$daysInMs"
     dte=$(date -r `expr \`date +%s\` - $ms` '+%Y_%m_%d')
